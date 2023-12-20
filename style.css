@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 
+.msg{
+    padding: 1rem;
+    border-radius: 20px;
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1s;
+}
+
+.winner{
+    transform: translateX(-50%) translateY(220%);
+    background: lightgreen;
+    color: green;
+    border: 1px solid  green;
+}
+
+.draw{
+    transform: translateX(-50%) translateY(220%);
+    background: black;
+    color: white;
+}
+
 header{
     padding: 1rem;
     text-align: center;

@@ -25,6 +25,24 @@ function isWinner() {
     return [false];
 }
 
+function showMsgBox(winStatus=false) {
+    let msgbox = document.querySelector('.msg');
+    if (winStatus) {
+        msgbox.innerText = 'Its a win';
+        msgbox.classList.add('winner');
+        setTimeout(() => {
+            msgbox.classList.remove('winner');
+        }, 2000);
+    } else {
+        msgbox.innerText = 'Its a draw';
+        msgbox.classList.add('draw');
+        setTimeout(() => {
+            msgbox.classList.remove('draw');
+        }, 2000);
+    }
+
+}
+
 function showWinner() {
     const winnerInfo = isWinner().slice(1);
     winnerInfo.forEach(e => {
@@ -42,6 +60,9 @@ function click(element) {
     element.innerText = i++ % 2 == 0 ? 'X' : 'O';
     if (isWinner()[0]) {
         showWinner();
+        showMsgBox(true);
+    } else if (i === 9) {
+        showMsgBox(false);
     }
 }
 
